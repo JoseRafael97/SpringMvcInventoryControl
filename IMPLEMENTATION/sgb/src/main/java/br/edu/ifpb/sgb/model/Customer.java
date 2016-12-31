@@ -14,12 +14,21 @@ public class Customer {
 	
 	
 	private String telefone;
+	
+	private Address address;
 
 
 	public String getName() {
 		return name;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public void setName(String name) {
 		this.name = name;

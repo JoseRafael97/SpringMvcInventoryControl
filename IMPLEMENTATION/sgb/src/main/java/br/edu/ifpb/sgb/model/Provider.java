@@ -14,6 +14,8 @@ public class Provider {
 	
 	@NotBlank
 	private String cnpj;
+	
+	private Address address;
 
 	public String getName() {
 		return name;
@@ -30,9 +32,15 @@ public class Provider {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+	
+	public Address getAddress() {
+		return address;
+	}
 
-	
-	
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "Provider [name=" + name + ", cnpj=" + cnpj + "]";
