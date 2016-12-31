@@ -1,5 +1,14 @@
 package br.edu.ifpb.sgb.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -7,14 +16,23 @@ import org.hibernate.validator.constraints.NotBlank;
  * @author rafaelfeitosa
  *
  */
+
+@Entity
+@Table(name = "provider")
 public class Provider {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	@NotBlank
 	private String name;
 	
-	@NotBlank
+	@NotBlank @Size(min = 18)
 	private String cnpj;
 	
+	@NotNull
+	@OneToOne
 	private Address address;
 
 	public String getName() {

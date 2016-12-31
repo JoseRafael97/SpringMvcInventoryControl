@@ -1,5 +1,10 @@
 package br.edu.ifpb.sgb.model;
 
+/**
+ * Representa o usuário que acessa o sistema.
+ * @author rafaelfeitosa
+ *
+ */
 public class User {
 	
 	private String name;
