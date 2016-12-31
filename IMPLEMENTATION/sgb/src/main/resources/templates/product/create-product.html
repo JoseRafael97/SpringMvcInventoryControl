@@ -1,0 +1,113 @@
+<!DOCTYPE html >
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/parten-layout'">
+
+<head>
+	<title>Cadastro de produto</title>
+</head>
+
+<body>
+	<section class="aw-layout-content  js-content"
+		layout:fragment="conteudo">
+
+		<div class="page-header">
+			<div class="container-fluid">
+				<h1>Cadastro de Produto</h1>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+			<div class="alert  alert-danger  alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<i class="fa  fa-exclamation-circle"></i> Já existe um produto com o
+				nome informado.
+			</div>
+
+			<form method="POST" th:object="${stockItem}"
+				class="form-vertical  js-form-loading">
+
+				<div class="row">
+					<div class="col-sm-2  form-group">
+						<label for="cod">Cod</label> <input id="cod" type="text"
+							class="form-control" />
+					</div>
+
+					<div class="col-sm-6  form-group">
+						<label for="nome">Nome</label> <input id="nome" type="text"
+							class="form-control" />
+					</div>
+
+					<div class="col-sm-4  form-group">
+						<label for="marca">Marca</label> <input id="marca" type="text"
+							class="form-control" />
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="input-produto-descricao">Descrição</label>
+					<textarea id="input-produto-descricao" rows="3"
+						class="form-control"></textarea>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-3 form-group">
+						<label for="tipo-medida">Tipo medida</label> <select
+							id="tipo-medida" class="form-control">
+							<option>Selecione</option>
+						</select>
+					</div>
+
+
+					<div class="col-sm-2  form-group">
+						<label for="quantidade">Quantidade</label> <input
+							placeholder="300g" id="quantidade" type="text"
+							class="form-control js-plain" />
+					</div>
+
+					<div class="col-sm-3 form-group">
+						<label for="categoria">Categoria</label>
+						<div class="sgest-field-action">
+							<select id="categoria"	class="form-control">
+								<option>Selecione</option>
+							</select>
+							
+							<div class="sgest-field-action__icon">
+								<a href="#" data-toggle="modal" data-target="#create-category">
+									<i class="glyphicon glyphicon-plus-sign sgest-glyphicon-large"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3 form-group">
+						<label for="fonercedor">Fornecedor</label> <select id="fonercedor"
+							class="form-control">
+							<option>Selecione</option>
+						</select>
+					</div>
+
+
+				</div>
+
+				<div class="form-group">
+					<button class="btn  btn-primary" type="submit">Salvar</button>
+					<a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
+
+				</div>
+
+			</form>
+		</div>
+
+		<div th:replace="/category/create-category :: modal-category"></div>
+	</section>
+
+
+</body>
+</html>

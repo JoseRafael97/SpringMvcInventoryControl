@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th= "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Teste</title>
+</head>
+<body>
+
+	<h1>TESTE</h1>
+
+	<form method="POST" th:object = "${stockItem}">
+		
+		<span th:text="${message}" ></span>
+		
+		<div th:each="erro : ${#fields.detailedErrors()}">
+			<span th:text="${erro.message}"></span>
+			
+		</div>
+		
+		<br>
+		<label>COD</label>
+		<input type="text" th:field="*{codItem}"/>
+		<br>
+		<label>Nome</label>
+		<input type="text"th:field="*{name}"/>
+		<br>
+		<label>Descrição</label>
+		<input type="text" th:field="*{description}"/>
+		<br>
+		<input type="submit" value="SALVAR" />
+	</form>
+</body>
+</html>

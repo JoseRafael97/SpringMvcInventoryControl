@@ -1,0 +1,11 @@
+.sgest-field-action{
+	display: flex;
+}
+
+.sgest-field-action__icon{
+	margin: 6px 0 0 5px;
+}
+
+.sgest-glyphicon-large{
+	font-size: 18px;
+}
